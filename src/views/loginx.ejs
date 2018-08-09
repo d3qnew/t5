@@ -1,0 +1,40 @@
+<%- include("layout/header1.ejs") %>
+<%- include("layout/header2.ejs") %>
+
+
+
+loginx page
+
+
+<div style="width: 100% ; text-align: center">
+
+    <div style="width: 800px; margin: auto">
+
+        <% if(typeof(err) != 'undefined'){ %>
+            <%= err %>
+        <%  }%>
+
+        <form action="/loginx" method="post">
+        username:
+        <input name="username" type="text"> <br>
+        password:
+        <input name="password" type="password"> <br>
+
+            <input type="submit" value="提交">
+
+
+        </form>
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+<%- include("layout/script.ejs") %>
+<%- include("layout/bottom.ejs") %>

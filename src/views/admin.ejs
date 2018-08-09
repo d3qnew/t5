@@ -1,0 +1,72 @@
+<%- include("layout/header1.ejs") %>
+
+<link rel="stylesheet" type="text/css" href="lib/bootstrap/stylesheets/bootstrap.css" />
+<style>
+    ul{
+        margin: 0;
+        padding: 0;
+    }
+    li{
+        display: inline-block;
+        padding-left: 3em;
+        padding-right: 3em;
+        color: #000;
+
+    }
+
+    a:link,a:visited{
+        text-decoration:none;  /*超链接无下划线*/
+    }
+    a:hover,a:focus{
+        color: #b20002;
+    }
+
+    .tab-pane div{
+        padding: 30px;
+    }
+</style>
+
+<%- include("layout/header2.ejs") %>
+
+
+<h1>admin page</h1>
+
+
+<div class="row" id="shejishi-ls">
+    <ul class="breadcrumb">
+        <li  class="active"><a class="active" aria-expanded="false" style="font-size: 18px; font-weight: 500;" href="#ls0" data-toggle="tab">账号管理</a></li>
+        <li><a class="active" aria-expanded="true" style="font-size: 18px; font-weight: 500;" href="#ls1" data-toggle="tab">bbb</a></li>
+        <li><a class="active" aria-expanded="false" style="font-size: 18px; font-weight: 500;" href="#ls2" data-toggle="tab">ccc</a></li>
+        <li><a class="active" aria-expanded="false" style="font-size: 18px; font-weight: 500;" href="#ls3" data-toggle="tab">ddd</a></li>
+    </ul>
+    <div class="tab-content ">
+        <div class="tab-pane fade active in" id="ls0">
+
+            <div class="">
+                账号管理
+            </div>
+        </div>
+        <div class="tab-pane fade" id="ls1">
+
+            <div class="">
+                <p>bbb</p>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="ls2">
+
+            <div class="">
+                <p>ccc</p>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="ls3">
+
+            <div class="">
+                <p>ddd</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include("layout/script.ejs") %>
+<%- include("layout/bottom.ejs") %>
