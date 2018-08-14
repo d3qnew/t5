@@ -14,6 +14,7 @@ const logger = require('koa-logger')
 const passport = require('./bin/passport')
 const session = require('koa-session2')
 const fs = require('fs')
+const xxtext = require('./bin/xxtext')
 
 const index = require('./routes/index')
 const users = require('./routes/users')
@@ -31,18 +32,26 @@ onerror(app)
 app.use(bodyparser({
   enableTypes:['json', 'form', 'text']
 }))
+
+
+
 app.use(json())
 app.use(logger())
 app.use(require('koa-static')(__dirname + '/dist/public'))
 
 app.use(views(__dirname + '/dist/views', {  extension: 'ejs' }))
 
+app.use(async (ctx,next) =>{
+  await xxtext(ctx)
+  await next()
+})
+
 // logger
 app.use(async (ctx, next) => {
   const start = new Date()
   await next()
   const ms = new Date() - start
-  console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
+  //console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
 })
 
 
@@ -55,6 +64,10 @@ app.use(session({
 //在app中开启koa-passport对session的支持
 app.use(passport.initialize())
 app.use(passport.session())
+
+
+
+
 
 var router = require('./routes')
 

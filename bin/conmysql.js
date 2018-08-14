@@ -9,7 +9,7 @@ var pass = {
   database: 'koa2web'
 }
 
-var conmysql =  function() {  }
+var conmysql =  function(){}
 
 conmysql.prototype.ls = async function(sqlstr) {
   try{

@@ -1,9 +1,8 @@
 const router = require('koa-router')();
 const passport = require('../bin/passport');
-const Consql = require('../bin/conmysql');
-const consql = new Consql();
-var reqname = '';
-var backurl = '';                             //登录来源页
+const consql = require('../bin/conmysql');
+let reqname = '';
+let backurl = '';                             //登录来源页
 
 /** * 认证登录 */
 router.post('/loginx', async (ctx, next) => {

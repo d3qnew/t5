@@ -15,7 +15,7 @@ passport.use(new LocalStrategy(async function(username, password, done) {
     let name = username
     console.log()
     let u = await consql.ls('select * from users where username = "'+name+'"')
-    console.log(u)
+    //console.log(u)
     if( u.length != 0 && pass === u[0]['password']){
       var user = {id: u['id'], username: name, password: pass}
       return done(null, user)
